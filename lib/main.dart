@@ -5,8 +5,10 @@ import 'package:profolio/blocs/local_bloc.dart';
 import 'package:profolio/blocs/theme_blocs.dart';
 import 'package:profolio/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
                   break;
               }
               return MaterialApp(
-                title: "'hasan's Profolio",
+                title: "hasan's Portfolio",
                 debugShowCheckedModeBanner: false,
                 localizationsDelegates: const [
                   AppLocalizations.delegate,
