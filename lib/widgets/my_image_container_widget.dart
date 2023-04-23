@@ -36,7 +36,10 @@ class MyImageContainer extends StatelessWidget {
             backgroundColor: Theme.of(context).colorScheme.secondary,
             child: CircleAvatar(
               radius: radius,
-              child: Image.asset("images/selfi.png"),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(radius),
+                child: Image.asset("images/selfi.png"),
+              ),
             ),
           ),
         ),
