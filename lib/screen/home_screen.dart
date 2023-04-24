@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:profolio/constance/constance.dart';
 import 'package:profolio/widgets/custom_drawer.dart';
 import 'package:profolio/widgets/main_page_summery.dart';
+import 'package:profolio/widgets/projects_summery.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       checkWindow(context);
       double padding;
       if (kIsWindow) {
-        padding = (MediaQuery.of(context).size.width) / 7;
+        padding = (MediaQuery.of(context).size.width) / 10;
       } else {
         padding = 16;
       }
@@ -58,12 +59,17 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: padding),
-          child: Column(
+          child: ListView(
+            scrollDirection: Axis.vertical,
             children: const [
               SizedBox(
                 height: 100,
               ),
-              Expanded(child: SummeryWidget())
+              SummeryWidget(),
+              SizedBox(
+                height: 20,
+              ),
+              ProjectSummery()
             ],
           ),
         ),

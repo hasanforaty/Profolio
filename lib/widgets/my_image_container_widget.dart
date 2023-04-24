@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profolio/constance/constance.dart';
 
 class MyImageContainer extends StatelessWidget {
   const MyImageContainer({Key? key, required this.child}) : super(key: key);
@@ -11,12 +12,7 @@ class MyImageContainer extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Container(
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
-            borderRadius: const BorderRadius.all(
-              Radius.circular(8),
-            ),
-          ),
+          decoration: getBoxDecoration(context),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [

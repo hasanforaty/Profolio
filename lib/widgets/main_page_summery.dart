@@ -19,6 +19,9 @@ class SummeryWidget extends StatelessWidget {
             localization?.name ?? "",
             style: Theme.of(context).textTheme.titleLarge,
           ),
+          const SizedBox(
+            height: 4,
+          ),
           Text(
             localization?.aboutMe ?? "",
             style: Theme.of(context).textTheme.bodyMedium,

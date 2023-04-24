@@ -71,8 +71,10 @@ flutter:
   fonts:
     - family: Didot
       fonts:
-        - asset: fonts/Vazir-Regular.ttf
         - asset: fonts/Didot Regular.ttf
+    - family: iranS
+      fonts:
+        - asset: fonts/Iranian Sans.ttf
 
 
   # To add assets to your application, add an assets section, like this:

@@ -3,7 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:profolio/constance/constance.dart';
 
 class CurrentThemeBloc extends Cubit<ThemeData> {
-  CurrentThemeBloc() : super(dayTheme);
+  CurrentThemeBloc() : super(getDayTheme());
 
-  void changeTheme() => emit(state == dayTheme ? darkTheme : dayTheme);
+  void changeTheme() =>
+      emit(state == dayTheme ? getDarkTheme() : getDayTheme());
 }

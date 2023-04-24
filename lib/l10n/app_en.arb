@@ -1,5 +1,7 @@
 {
   "name":"Hasan Foratyzade",
   "aboutMe": "I'm a passionate Developer I was an Accounting student until I realize that my skill and my interest weren't in Accounting but Creating an app and creating an infinite world of possibilities with my knowledge. I start learning how to code in 2020 May 21 with help of an old book about Java and a masterclass course then continue my journey with learning JSP and a little about spring. in 2020 December 21 I decided to change my route to mobile development and start learning Android with Kotlin then in 2022 July 5 I start learning Flutter and until now I dedicate my time and life to learn and use what I learn, and to learn and make myself better.",
-  "summery": "hi, I'm a mobile developer with more than 2 year of experience in mobile development and maintaining legacy apps welcome to my online portfolio"
+  "summery": "hi, I'm a mobile developer with more than 2 year of experience in mobile development and maintaining legacy apps welcome to my online portfolio",
+  "projectSummery": "my main expertise is mobile developer and currently i'm working on a convenient litner box app cross different platforms",
+  "projectSummeryTitle": "projects"
 }

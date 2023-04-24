@@ -22,10 +22,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => CurrentThemeBloc()),
         BlocProvider(create: (_) => CurrentLocalBloc())
       ],
-      child: BlocBuilder<CurrentThemeBloc, ThemeData>(
-        builder: (_, currentTheme) {
-          return BlocBuilder<CurrentLocalBloc, SupportedLocal>(
-            builder: (_, supportedLocal) {
+      child: BlocBuilder<CurrentLocalBloc, SupportedLocal>(
+        builder: (_, supportedLocal) {
+          return BlocBuilder<CurrentThemeBloc, ThemeData>(
+            builder: (_, currentTheme) {
               Locale currentLocal;
               switch (supportedLocal) {
                 case SupportedLocal.en:
