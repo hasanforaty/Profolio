@@ -75,6 +75,9 @@ flutter:
     - family: iranS
       fonts:
         - asset: fonts/Iranian Sans.ttf
+    - family: CustomIcon
+      fonts:
+        - asset: fonts/CustomIcon.ttf
 
 
   # To add assets to your application, add an assets section, like this:

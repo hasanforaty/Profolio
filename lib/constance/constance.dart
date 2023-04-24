@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:profolio/constance/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:profolio/constance/custom_icon_icons.dart';
+import '../module/project_model.dart';
 
 ThemeData getDayTheme() {
   print(Intl.getCurrentLocale());
@@ -75,3 +78,29 @@ BoxDecoration getBoxDecoration(BuildContext context) => BoxDecoration(
         Radius.circular(8),
       ),
     );
+
+List<ProjectModel> getMyProjects(BuildContext context) {
+  var localization = AppLocalizations.of(context);
+  return [
+    ProjectModel(
+        title: localization?.presenceProjectTitle ?? "",
+        explanation: localization?.presenceProjectBody ?? "",
+        imageUrl: "",
+        techStack: [CustomIcon.flutter]),
+    ProjectModel(
+        title: localization?.portfolioSiteTitle ?? "",
+        explanation: localization?.portfolioSiteBody ?? "",
+        imageUrl: "",
+        techStack: [CustomIcon.flutter]),
+    ProjectModel(
+        title: localization?.momayeziTitle ?? "",
+        explanation: localization?.momayeziBody ?? "",
+        imageUrl: "",
+        techStack: [CustomIcon.android, CustomIcon.kotlin]),
+    ProjectModel(
+        title: localization?.massSmsTitle ?? "",
+        explanation: localization?.massSmsBody ?? "",
+        imageUrl: "",
+        techStack: [CustomIcon.android, CustomIcon.kotlin]),
+  ];
+}
