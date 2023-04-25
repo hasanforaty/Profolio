@@ -85,22 +85,29 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.presenceProjectTitle ?? "",
         explanation: localization?.presenceProjectBody ?? "",
-        imageUrl: "",
-        techStack: [CustomIcon.flutter]),
+        imageUrl:
+            "https://github.com/hasanforaty/Profolio/blob/main/assets/images/attendance.mp4",
+        techStack: [CustomIcon.flutter],
+        restricted: true),
     ProjectModel(
         title: localization?.portfolioSiteTitle ?? "",
         explanation: localization?.portfolioSiteBody ?? "",
         imageUrl: "",
-        techStack: [CustomIcon.flutter]),
+        techStack: [CustomIcon.flutter],
+        restricted: false,
+        gitHubUrl: "https://github.com/hasanforaty/Profolio"),
     ProjectModel(
         title: localization?.momayeziTitle ?? "",
         explanation: localization?.momayeziBody ?? "",
-        imageUrl: "",
-        techStack: [CustomIcon.android, CustomIcon.kotlin]),
+        imageUrl:
+            "https://github.com/hasanforaty/Profolio/blob/main/assets/images/momayezi_3.gif",
+        techStack: [CustomIcon.android, CustomIcon.kotlin],
+        restricted: true),
     ProjectModel(
         title: localization?.massSmsTitle ?? "",
         explanation: localization?.massSmsBody ?? "",
         imageUrl: "",
-        techStack: [CustomIcon.android, CustomIcon.kotlin]),
+        techStack: [CustomIcon.android, CustomIcon.kotlin],
+        restricted: true),
   ];
 }
