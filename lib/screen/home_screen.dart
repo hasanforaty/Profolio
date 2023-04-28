@@ -57,21 +57,22 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             );
           }),
         ),
-        body: Padding(
+        body: ListView(
+          scrollDirection: Axis.vertical,
           padding: EdgeInsets.symmetric(horizontal: padding),
-          child: ListView(
-            scrollDirection: Axis.vertical,
-            children: const [
-              SizedBox(
-                height: 100,
-              ),
-              SummeryWidget(),
-              SizedBox(
-                height: 20,
-              ),
-              ProjectSummery()
-            ],
-          ),
+          children: const [
+            SizedBox(
+              height: 100,
+            ),
+            SummeryWidget(),
+            SizedBox(
+              height: 20,
+            ),
+            ProjectSummery(),
+            SizedBox(
+              height: 20,
+            ),
+          ],
         ),
       );
     });

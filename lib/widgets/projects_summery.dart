@@ -27,10 +27,10 @@ class ProjectSummery extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium,
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 16,
             ),
-            _ProjectList(),
+            const _ProjectList(),
           ],
         ),
       ),
