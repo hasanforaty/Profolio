@@ -91,14 +91,14 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.presenceProjectTitle ?? "",
         explanation: localization?.presenceProjectBody ?? "",
-        imageUrl: "images/momayezi_3.gif",
-        techStack: [CustomIcon.flutter],
+        imageUrl: "images/attendance.gif",
+        techStack: [CustomIcon.flutter, CustomIcon.dart],
         restricted: true),
     ProjectModel(
         title: localization?.portfolioSiteTitle ?? "",
         explanation: localization?.portfolioSiteBody ?? "",
         imageUrl: "",
-        techStack: [CustomIcon.flutter],
+        techStack: [CustomIcon.flutter, CustomIcon.dart],
         restricted: false,
         gitHubUrl: "https://github.com/hasanforaty/Profolio"),
     ProjectModel(

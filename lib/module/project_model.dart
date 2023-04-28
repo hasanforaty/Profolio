@@ -6,7 +6,7 @@ class ProjectModel {
   String imageUrl;
   String? gitHubUrl;
   bool restricted;
-  List<IconData> techStack;
+  List<String> techStack;
 
   ProjectModel({
     required this.title,

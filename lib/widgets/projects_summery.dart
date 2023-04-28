@@ -15,6 +15,9 @@ class ProjectSummery extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
+            const SizedBox(
+              height: 16,
+            ),
             Text(
               localization?.projectSummeryTitle ?? "",
               style: Theme.of(context).textTheme.titleLarge,
@@ -45,14 +48,18 @@ class _ProjectList extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraint) {
       return SizedBox(
-        height: kIsWindow ? 600 : null,
+        height: kIsWindow ? 660 : null,
         width: kIsMobile ? 200 : null,
         child: ListView(
           scrollDirection: kIsMobile ? Axis.vertical : Axis.horizontal,
           shrinkWrap: true,
           children: [
             for (var item in getMyProjects(context)) ...[
-              ProjectItem(model: item)
+              ProjectItem(model: item),
+              const SizedBox(
+                width: 8,
+                height: 8,
+              )
             ],
           ],
         ),

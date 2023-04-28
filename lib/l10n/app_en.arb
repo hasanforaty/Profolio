@@ -4,7 +4,7 @@
   "summery": "hi, I'm a mobile developer with more than 2 year of experience in mobile development and maintaining legacy apps welcome to my online portfolio",
   "projectSummery": "my main expertise is mobile developer and currently i'm working on a convenient litner box app cross different platforms",
   "projectSummeryTitle": "projects",
-  "presenceProjectTitle": "PROJECT : PRESENCE & ABSENCE",
+  "presenceProjectTitle": "Project : Presence & Absence",
   "presenceProjectBody": "an Flutter Project for supervisors in university to presence and absence",
   "portfolioSiteTitle": "Project: Portfolio",
   "portfolioSiteBody": "an Flutter web application to showcase my portfolio",
@@ -12,7 +12,10 @@
   "momayeziBody": "a project for organizations that want to create forms and collect data base on geography",
   "massSmsTitle": "PROJECT : MASS SMS SENDER",
   "massSmsBody" : "a project with solo perpuse of sending bulk of sms to group of people , it can be based periodically  or one time send ",
-  "techStack": "Tech Stack:"
+  "techStack": "Tech Stack:",
+  "skillAndExperience": "Skill & Experience",
+  "skillAndExperienceIntro": "list of my Skill and Experience",
+  "seeGitHub": "see code base"
 
 
 }

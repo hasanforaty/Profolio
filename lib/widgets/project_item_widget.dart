@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:profolio/constance/custom_icon_icons.dart';
 import 'package:profolio/module/project_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:cached_network_image_platform_interface/cached_network_image_platform_interface.dart';
+import 'dart:js' as js;
 
 class ProjectItem extends StatelessWidget {
   final ProjectModel model;
@@ -14,7 +16,7 @@ class ProjectItem extends StatelessWidget {
     return Container(
       color: Colors.transparent,
       width: 200,
-      height: 600,
+      height: 660,
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,6 +27,7 @@ class ProjectItem extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(16)),
               child: Image.asset(
                 model.imageUrl,
+                fit: BoxFit.fill,
               ),
             ),
           ),
@@ -60,13 +63,47 @@ class ProjectItem extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              for (var icon in model.techStack)
-                Icon(
+              for (var icon in model.techStack) ...[
+                SvgPicture.asset(
                   icon,
-                  size: 64,
+                  width: 32,
+                  height: 32,
+                ),
+                const SizedBox(
+                  width: 8,
+                  height: 8,
                 )
+              ]
             ],
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          model.gitHubUrl != null
+              ? GestureDetector(
+                  onTap: () {
+                    js.context.callMethod("open", [model.gitHubUrl!]);
+                  },
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        CustomIcon.gitHub,
+                        height: 16,
+                        width: 16,
+                      ),
+                      RichText(
+                        text: TextSpan(
+                            text: localization?.seeGitHub ?? "",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                    decoration: TextDecoration.underline)),
+                      ),
+                    ],
+                  ),
+                )
+              : Container(),
         ],
       ),
     );
