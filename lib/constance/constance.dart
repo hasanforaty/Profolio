@@ -1,9 +1,22 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:profolio/constance/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:profolio/constance/custom_icon_icons.dart';
 import '../module/project_model.dart';
+
+TextTheme _textTheme(String familyFont) => TextTheme(
+      displayLarge:
+          const TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+      titleLarge: TextStyle(
+          fontSize: 36.0, fontStyle: FontStyle.italic, fontFamily: familyFont),
+      titleMedium: TextStyle(
+          fontSize: 18.0, fontStyle: FontStyle.italic, fontFamily: familyFont),
+      bodyMedium: TextStyle(fontSize: 16.0, fontFamily: familyFont),
+      bodySmall: TextStyle(fontSize: 8.0, fontFamily: familyFont),
+    );
 
 ThemeData getDayTheme() {
   print(Intl.getCurrentLocale());
@@ -15,13 +28,7 @@ ThemeData getDayTheme() {
       onPrimary: Colors.black,
       background: primaryDay,
     ),
-    textTheme: TextTheme(
-      displayLarge:
-          const TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(
-          fontSize: 36.0, fontStyle: FontStyle.italic, fontFamily: familyFont),
-      bodyMedium: TextStyle(fontSize: 16.0, fontFamily: familyFont),
-    ),
+    textTheme: _textTheme(familyFont),
   );
 }
 
@@ -33,13 +40,7 @@ ThemeData getDarkTheme() {
       primary: primaryDark,
       onPrimary: Color(0xffA5B3CE),
     ),
-    textTheme: TextTheme(
-      displayLarge:
-          const TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(
-          fontSize: 36.0, fontStyle: FontStyle.italic, fontFamily: familyFont),
-      bodyMedium: TextStyle(fontSize: 16.0, fontFamily: familyFont),
-    ),
+    textTheme: _textTheme(familyFont),
   );
 }
 
@@ -61,16 +62,21 @@ var dayTheme = ThemeData.light().copyWith(
 bool kIsMobile = false;
 bool kIsWindow = true;
 
-void checkWindow(BuildContext context) {
-  var currentWidth = MediaQuery.of(context).size.width;
-  if (currentWidth > 900) {
-    kIsMobile = false;
-    kIsWindow = true;
-  } else {
-    kIsMobile = true;
-    kIsWindow = false;
-  }
+void checkWindow() {
+  kIsWindow = _isWeb();
+  kIsMobile = _isMobile();
 }
+
+String getOSInsideWeb() {
+  final userAgent = window.navigator.userAgent.toString().toLowerCase();
+  if (userAgent.contains("iphone")) return "ios";
+  if (userAgent.contains("ipad")) return "ios";
+  if (userAgent.contains("android")) return "Android";
+  return "Web";
+}
+
+bool _isWeb() => getOSInsideWeb() == "Web";
+bool _isMobile() => getOSInsideWeb() == "Android" || getOSInsideWeb() == "ios";
 
 BoxDecoration getBoxDecoration(BuildContext context) => BoxDecoration(
       color: Theme.of(context).colorScheme.secondary,
@@ -85,8 +91,7 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.presenceProjectTitle ?? "",
         explanation: localization?.presenceProjectBody ?? "",
-        imageUrl:
-            "https://github.com/hasanforaty/Profolio/blob/main/assets/images/attendance.mp4",
+        imageUrl: "images/momayezi_3.gif",
         techStack: [CustomIcon.flutter],
         restricted: true),
     ProjectModel(
@@ -99,8 +104,7 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.momayeziTitle ?? "",
         explanation: localization?.momayeziBody ?? "",
-        imageUrl:
-            "https://github.com/hasanforaty/Profolio/blob/main/assets/images/momayezi_3.gif",
+        imageUrl: "images/momayezi_3.gif",
         techStack: [CustomIcon.android, CustomIcon.kotlin],
         restricted: true),
     ProjectModel(

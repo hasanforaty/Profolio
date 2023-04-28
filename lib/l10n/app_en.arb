@@ -11,5 +11,8 @@
   "momayeziTitle": "Project : momayezi",
   "momayeziBody": "a project for organizations that want to create forms and collect data base on geography",
   "massSmsTitle": "PROJECT : MASS SMS SENDER",
-  "massSmsBody" : "a project with solo perpuse of sending bulk of sms to group of people , it can be based periodically  or one time send "
+  "massSmsBody" : "a project with solo perpuse of sending bulk of sms to group of people , it can be based periodically  or one time send ",
+  "techStack": "Tech Stack:"
+
+
 }

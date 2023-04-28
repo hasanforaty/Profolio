@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, _) {
-      checkWindow(context);
+      checkWindow();
       double padding;
       if (kIsWindow) {
         padding = (MediaQuery.of(context).size.width) / 10;
