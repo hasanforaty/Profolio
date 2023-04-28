@@ -5,6 +5,8 @@ import 'package:intl/intl.dart';
 import 'package:profolio/constance/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:profolio/constance/custom_icon_icons.dart';
+import 'package:profolio/module/experience_model.dart';
+import 'package:profolio/widgets/experience_item.dart';
 import '../module/project_model.dart';
 
 TextTheme _textTheme(String familyFont) => TextTheme(
@@ -113,5 +115,19 @@ List<ProjectModel> getMyProjects(BuildContext context) {
         imageUrl: "",
         techStack: [CustomIcon.android, CustomIcon.kotlin],
         restricted: true),
+  ];
+}
+
+List<ExperienceModel> getExperienceItems(BuildContext context) {
+  var localization = AppLocalizations.of(context);
+  return [
+    ExperienceModel(
+        title: localization?.androidExTitle ?? "",
+        logoUrl: "logos/android_1.svg",
+        description: localization?.androidExBody ?? ""),
+    ExperienceModel(
+        title: localization?.flutterExTitle ?? "",
+        logoUrl: "logos/flutter_1.svg",
+        description: localization?.flutterExBody ?? ""),
   ];
 }
