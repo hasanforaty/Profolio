@@ -6,6 +6,8 @@ import 'package:profolio/module/project_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'dart:js' as js;
 
+import '../constance/constance.dart';
+
 class ProjectItem extends StatelessWidget {
   final ProjectModel model;
   const ProjectItem({Key? key, required this.model}) : super(key: key);
@@ -21,6 +23,7 @@ class ProjectItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
+        textDirection: getTextDirection(context),
         children: [
           Expanded(
             child: ClipRRect(
@@ -39,6 +42,7 @@ class ProjectItem extends StatelessWidget {
           Center(
             child: Text(
               model.title,
+              textDirection: getTextDirection(context),
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.start,
             ),
@@ -48,14 +52,16 @@ class ProjectItem extends StatelessWidget {
           ),
           Text(
             model.explanation,
+            textDirection: getTextDirection(context),
             style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.justify,
+            textAlign: TextAlign.start,
           ),
           const SizedBox(
             height: 4,
           ),
           Text(
             localization?.techStack ?? "",
+            textDirection: getTextDirection(context),
             style: Theme.of(context).textTheme.titleMedium,
             textAlign: TextAlign.start,
           ),

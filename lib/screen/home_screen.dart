@@ -5,8 +5,10 @@ import 'package:profolio/widgets/custom_drawer.dart';
 import 'package:profolio/widgets/day_night_widget.dart';
 import 'package:profolio/widgets/main_page_summery.dart';
 import 'package:profolio/widgets/projects_summery.dart';
+import 'package:profolio/widgets/select_local_widget.dart';
 import 'package:profolio/widgets/skill_and_experience_widget.dart';
 import 'package:profolio/widgets/social_media_icon.dart';
+import 'package:profolio/widgets/social_media_widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -44,27 +46,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          title: Row(
-            children: [
-              Expanded(child: Container()),
-              const SocialMediaIcon(
-                  iconUrl: "logos/instagram.svg", internetUrl: ""),
-              const SizedBox(
-                width: 8,
-              ),
-              const SocialMediaIcon(
-                  iconUrl: "logos/stack_overflow.svg",
-                  internetUrl:
-                      "https://stackoverflow.com/users/13922303/hasan-foraty"),
-              const SizedBox(
-                width: 8,
-              ),
-              const SocialMediaIcon(
-                  iconUrl: "logos/github.svg",
-                  internetUrl: "https://github.com/hasanforaty"),
-              Expanded(child: Container()),
-            ],
-          ),
+          title: kIsWindow ? const SocialMediaWidgets() : Container(),
           leading: Builder(builder: (newContext) {
             return IconButton(
               icon: const Icon(
@@ -88,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             SizedBox(
               width: 32,
             ),
+            SelectLocalWidget(),
           ],
         ),
         body: ListView(

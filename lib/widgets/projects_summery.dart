@@ -14,12 +14,14 @@ class ProjectSummery extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
+          textDirection: getTextDirection(context),
           children: [
             const SizedBox(
               height: 16,
             ),
             Text(
               localization?.projectSummeryTitle ?? "",
+              textDirection: getTextDirection(context),
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(
@@ -27,8 +29,9 @@ class ProjectSummery extends StatelessWidget {
             ),
             Text(
               localization?.projectSummery ?? "",
+              textDirection: getTextDirection(context),
               style: Theme.of(context).textTheme.bodyMedium,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.start,
             ),
             const SizedBox(
               height: 16,

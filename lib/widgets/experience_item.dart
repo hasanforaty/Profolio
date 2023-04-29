@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:profolio/constance/colors.dart';
 import 'package:profolio/module/experience_model.dart';
 
+import '../constance/constance.dart';
+
 class ExperienceItem extends StatelessWidget {
   final ExperienceModel model;
   const ExperienceItem({Key? key, required this.model}) : super(key: key);
@@ -48,8 +50,8 @@ class ExperienceItem extends StatelessWidget {
           ),
           Text(
             model.description,
+            textDirection: getTextDirection(context),
             style: Theme.of(context).textTheme.bodyMedium,
-            textAlign: TextAlign.justify,
           ),
         ],
       ),

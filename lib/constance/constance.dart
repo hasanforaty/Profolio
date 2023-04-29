@@ -1,18 +1,22 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:profolio/blocs/local_bloc.dart';
 import 'package:profolio/constance/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:profolio/constance/custom_icon_icons.dart';
 import 'package:profolio/module/experience_model.dart';
 import '../module/project_model.dart';
+import 'dart:ui' as ui;
 
 TextTheme _textTheme(String familyFont, bool day) => TextTheme(
       displayLarge: TextStyle(
-          fontSize: 72.0,
-          fontWeight: FontWeight.bold,
-          color: day ? Colors.black : const Color(0xffA5B3CE)),
+        fontSize: 72.0,
+        fontWeight: FontWeight.bold,
+        color: day ? Colors.black : const Color(0xffA5B3CE),
+      ),
       titleLarge: TextStyle(
           fontSize: 36.0,
           fontStyle: FontStyle.italic,
@@ -46,6 +50,13 @@ ThemeData getDayTheme() {
     ),
     textTheme: _textTheme(familyFont, true),
   );
+}
+
+ui.TextDirection getTextDirection(BuildContext context) {
+  var currentLocal = context.read<CurrentLocalBloc>().state;
+  return currentLocal == SupportedLocal.fa
+      ? ui.TextDirection.rtl
+      : ui.TextDirection.ltr;
 }
 
 ThemeData getDarkTheme() {

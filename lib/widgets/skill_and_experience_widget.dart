@@ -30,6 +30,7 @@ class SkillAndExperience extends StatelessWidget {
           Center(
             child: Text(
               localization?.skillAndExperience ?? "",
+              textDirection: getTextDirection(context),
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
@@ -39,6 +40,7 @@ class SkillAndExperience extends StatelessWidget {
           Center(
             child: Text(
               localization?.skillAndExperienceIntro ?? "",
+              textDirection: getTextDirection(context),
               style: Theme.of(context).textTheme.bodyMedium,
             ),
           ),
