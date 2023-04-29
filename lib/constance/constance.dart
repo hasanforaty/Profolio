@@ -8,28 +8,43 @@ import 'package:profolio/constance/custom_icon_icons.dart';
 import 'package:profolio/module/experience_model.dart';
 import '../module/project_model.dart';
 
-TextTheme _textTheme(String familyFont) => TextTheme(
-      displayLarge:
-          const TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+TextTheme _textTheme(String familyFont, bool day) => TextTheme(
+      displayLarge: TextStyle(
+          fontSize: 72.0,
+          fontWeight: FontWeight.bold,
+          color: day ? Colors.black : const Color(0xffA5B3CE)),
       titleLarge: TextStyle(
-          fontSize: 36.0, fontStyle: FontStyle.italic, fontFamily: familyFont),
+          fontSize: 36.0,
+          fontStyle: FontStyle.italic,
+          fontFamily: familyFont,
+          color: day ? Colors.black : const Color(0xffA5B3CE)),
       titleMedium: TextStyle(
-          fontSize: 18.0, fontStyle: FontStyle.italic, fontFamily: familyFont),
-      bodyMedium: TextStyle(fontSize: 16.0, fontFamily: familyFont),
-      bodySmall: TextStyle(fontSize: 8.0, fontFamily: familyFont),
+          fontSize: 18.0,
+          fontStyle: FontStyle.italic,
+          fontFamily: familyFont,
+          color: day ? Colors.black : const Color(0xffA5B3CE)),
+      bodyMedium: TextStyle(
+          fontSize: 16.0,
+          fontFamily: familyFont,
+          color: day ? Colors.black : const Color(0xffA5B3CE)),
+      bodySmall: TextStyle(
+          fontSize: 8.0,
+          fontFamily: familyFont,
+          color: day ? Colors.black : const Color(0xffA5B3CE)),
     );
 
 ThemeData getDayTheme() {
   print(Intl.getCurrentLocale());
   var familyFont = Intl.getCurrentLocale().contains("fa") ? 'iranS' : "Didot";
   return ThemeData.light().copyWith(
+    primaryColor: primaryDay,
     colorScheme: const ColorScheme.light(
       primary: primaryDay,
       secondary: secondaryDay,
       onPrimary: Colors.black,
       background: primaryDay,
     ),
-    textTheme: _textTheme(familyFont),
+    textTheme: _textTheme(familyFont, true),
   );
 }
 
@@ -41,7 +56,7 @@ ThemeData getDarkTheme() {
       primary: primaryDark,
       onPrimary: Color(0xffA5B3CE),
     ),
-    textTheme: _textTheme(familyFont),
+    textTheme: _textTheme(familyFont, false),
   );
 }
 
@@ -92,13 +107,13 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.presenceProjectTitle ?? "",
         explanation: localization?.presenceProjectBody ?? "",
-        imageUrl: "images/attendance.gif",
+        imageUrl: "https://shahrejahan.com/images/attendance.gif",
         techStack: [CustomIcon.flutter, CustomIcon.dart],
         restricted: true),
     ProjectModel(
         title: localization?.portfolioSiteTitle ?? "",
         explanation: localization?.portfolioSiteBody ?? "",
-        imageUrl: "images/portfolio.png",
+        imageUrl: "https://shahrejahan.com/images/portfolio.png",
         techStack: [CustomIcon.flutter, CustomIcon.dart],
         restricted: false,
         gitHubUrl: "https://github.com/hasanforaty/Profolio",
@@ -106,14 +121,14 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.shahreJahanProjectTitle ?? "",
         explanation: localization?.shahreJahanProjectBody ?? "",
-        imageUrl: "images/shahrejahan.png",
+        imageUrl: "https://shahrejahan.com/images/shahrejahan.png",
         techStack: [CustomIcon.flutter, CustomIcon.dart],
         restricted: true,
         applicationUrl: "https://shahrejahan.com/"),
     ProjectModel(
         title: localization?.momayeziTitle ?? "",
         explanation: localization?.momayeziBody ?? "",
-        imageUrl: "images/momayezi_3.gif",
+        imageUrl: "https://shahrejahan.com/images/momayezi_3.gif",
         techStack: [CustomIcon.android, CustomIcon.kotlin],
         restricted: true),
     ProjectModel(

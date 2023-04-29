@@ -25,9 +25,11 @@ class ProjectItem extends StatelessWidget {
           Expanded(
             child: ClipRRect(
               borderRadius: const BorderRadius.all(Radius.circular(16)),
-              child: Image.asset(
-                model.imageUrl,
-                fit: BoxFit.fill,
+              child: CachedNetworkImage(
+                imageUrl: model.imageUrl,
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
           ),
