@@ -55,6 +55,7 @@ ThemeData getDarkTheme() {
       background: Color(0xff19202E),
       primary: primaryDark,
       onPrimary: Color(0xffA5B3CE),
+      secondary: primaryDark,
     ),
     textTheme: _textTheme(familyFont, false),
   );

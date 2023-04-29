@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:profolio/constance/constance.dart';
 import 'package:profolio/widgets/custom_drawer.dart';
+import 'package:profolio/widgets/day_night_widget.dart';
 import 'package:profolio/widgets/main_page_summery.dart';
 import 'package:profolio/widgets/projects_summery.dart';
 import 'package:profolio/widgets/skill_and_experience_widget.dart';
@@ -79,6 +80,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               },
             );
           }),
+          actions: const [
+            SizedBox(
+              width: 32,
+            ),
+            DayAndNightWidget(),
+            SizedBox(
+              width: 32,
+            ),
+          ],
         ),
         body: ListView(
           scrollDirection: Axis.vertical,

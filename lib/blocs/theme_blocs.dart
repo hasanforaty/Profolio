@@ -5,6 +5,7 @@ import 'package:profolio/constance/constance.dart';
 class CurrentThemeBloc extends Cubit<ThemeData> {
   CurrentThemeBloc() : super(getDayTheme());
 
-  void changeTheme() =>
-      emit(state == dayTheme ? getDarkTheme() : getDayTheme());
+  void changeTheme() {
+    emit(state == getDayTheme() ? getDarkTheme() : getDayTheme());
+  }
 }

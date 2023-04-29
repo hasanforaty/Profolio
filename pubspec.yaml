@@ -45,6 +45,7 @@ dependencies:
   url_launcher: ^6.1.10
   cached_network_image: ^3.2.3
   flutter_svg: ^2.0.5
+  rive: ^0.10.4
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
   assets:
     - assets/images/
     - assets/logos/
+    - assets/rive/
   fonts:
     - family: Didot
       fonts:
