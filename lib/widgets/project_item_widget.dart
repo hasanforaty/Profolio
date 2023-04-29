@@ -104,6 +104,24 @@ class ProjectItem extends StatelessWidget {
                   ),
                 )
               : Container(),
+          const SizedBox(
+            height: 16,
+          ),
+          model.applicationUrl != null
+              ? GestureDetector(
+                  onTap: () {
+                    js.context.callMethod("open", [model.applicationUrl!]);
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                        text: localization?.seeFinalProduct ?? "",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium
+                            ?.copyWith(decoration: TextDecoration.underline)),
+                  ),
+                )
+              : Container(),
         ],
       ),
     );

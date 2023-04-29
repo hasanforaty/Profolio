@@ -6,7 +6,6 @@ import 'package:profolio/constance/colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:profolio/constance/custom_icon_icons.dart';
 import 'package:profolio/module/experience_model.dart';
-import 'package:profolio/widgets/experience_item.dart';
 import '../module/project_model.dart';
 
 TextTheme _textTheme(String familyFont) => TextTheme(
@@ -99,10 +98,18 @@ List<ProjectModel> getMyProjects(BuildContext context) {
     ProjectModel(
         title: localization?.portfolioSiteTitle ?? "",
         explanation: localization?.portfolioSiteBody ?? "",
-        imageUrl: "",
+        imageUrl: "images/portfolio.png",
         techStack: [CustomIcon.flutter, CustomIcon.dart],
         restricted: false,
-        gitHubUrl: "https://github.com/hasanforaty/Profolio"),
+        gitHubUrl: "https://github.com/hasanforaty/Profolio",
+        applicationUrl: "https://hasanforaty.github.io/"),
+    ProjectModel(
+        title: localization?.shahreJahanProjectTitle ?? "",
+        explanation: localization?.shahreJahanProjectBody ?? "",
+        imageUrl: "images/shahrejahan.png",
+        techStack: [CustomIcon.flutter, CustomIcon.dart],
+        restricted: true,
+        applicationUrl: "https://shahrejahan.com/"),
     ProjectModel(
         title: localization?.momayeziTitle ?? "",
         explanation: localization?.momayeziBody ?? "",
