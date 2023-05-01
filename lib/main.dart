@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:profolio/blocs/local_bloc.dart';
+import 'package:profolio/blocs/project_filter_bloc.dart';
 import 'package:profolio/blocs/theme_blocs.dart';
 import 'package:profolio/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => CurrentThemeBloc()),
-        BlocProvider(create: (_) => CurrentLocalBloc())
+        BlocProvider(create: (_) => CurrentLocalBloc()),
+        BlocProvider(create: (_) => ProjectFilterBloc()),
       ],
       child: BlocBuilder<CurrentLocalBloc, SupportedLocal>(
         builder: (_, supportedLocal) {

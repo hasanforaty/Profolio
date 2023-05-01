@@ -8,6 +8,7 @@ class ProjectModel {
   String? applicationUrl;
   bool restricted;
   List<String> techStack;
+  ProjectType type;
 
   ProjectModel(
       {required this.title,
@@ -16,5 +17,12 @@ class ProjectModel {
       required this.techStack,
       this.gitHubUrl,
       this.restricted = true,
-      this.applicationUrl});
+      this.applicationUrl,
+      required this.type});
+}
+
+enum ProjectType {
+  practice,
+  enterprise,
+  demo,
 }

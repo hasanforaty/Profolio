@@ -23,7 +23,11 @@
   "androidExTitle": "Android app development",
   "androidExBody": "I started my programming journey with android app development and spend 1/5 years working in different area of expertise from regular app to geography base apps.I describe my journey as one of most delightful time i had in programming",
   "flutterExTitle": "Flutter app development",
-  "flutterExBody": "I start flutter as an hobby , to finding something new to learn but i get fascinate with it so here I'm working as a flutter developer"
+  "flutterExBody": "I start flutter as an hobby , to finding something new to learn but i get fascinate with it so here I'm working as a flutter developer",
+  "enterpriseProject": "Enterprise",
+  "demoProjects": "Demo",
+  "practicalProjects": "Practice",
+  "allProjects": "All"
 
 
 }
