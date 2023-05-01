@@ -1,40 +1,27 @@
 import 'package:flutter/material.dart';
-
-import 'package:profolio/constance/constance.dart';
-import 'package:profolio/main.dart';
-import 'package:profolio/widgets/custom_drawer.dart';
-import 'package:profolio/widgets/day_night_widget.dart';
 import 'package:profolio/widgets/main_page_summery.dart';
-import 'package:profolio/widgets/projects_summery.dart';
-import 'package:profolio/widgets/select_local_widget.dart';
-import 'package:profolio/widgets/skill_and_experience_widget.dart';
-import 'package:profolio/widgets/social_media_widgets.dart';
+import 'package:profolio/widgets/project_item_widget.dart';
+
+import '../constance/constance.dart';
+import '../widgets/day_night_widget.dart';
+import '../widgets/select_local_widget.dart';
+import '../widgets/social_media_widgets.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ProjectsScreen extends StatefulWidget {
+  const ProjectsScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<ProjectsScreen> createState() => _ProjectsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
-  bool drawerOpened = false;
-
-  @override
-  void setState(VoidCallback fn) {
-    // TODO: implement setState
-
-    super.setState(fn);
-  }
-
-  void drawerToggle() {}
+class _ProjectsScreenState extends State<ProjectsScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, _) {
+      var localization = AppLocalizations.of(context);
       checkWindow();
       double padding;
-      var localization = AppLocalizations.of(context);
       if (kIsWindow) {
         padding = (MediaQuery.of(context).size.width) / 10;
       } else {
@@ -42,9 +29,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       }
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        onDrawerChanged: (opened) {
-          print("clicked ${opened}");
-        },
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -76,30 +60,58 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
           ],
         ),
         body: ListView(
-          scrollDirection: Axis.vertical,
-          padding: EdgeInsets.symmetric(horizontal: padding),
+          padding: EdgeInsets.all(padding),
           children: [
             const SizedBox(
-              height: 100,
+              height: 32,
             ),
             SummeryWidget(
-              label: localization?.name ?? "",
-              explanation: localization?.aboutMe ?? "",
+              label: localization?.projectSummeryTitle ?? "",
+              explanation: localization?.projectSummery ?? "",
             ),
             const SizedBox(
-              height: 20,
+              height: 32,
             ),
-            const ProjectSummery(),
-            const SizedBox(
-              height: 20,
-            ),
-            const SkillAndExperience(),
-            const SizedBox(
-              height: 20,
-            ),
+            const _ProjectsList(),
           ],
         ),
       );
     });
+  }
+}
+
+class _ProjectsList extends StatelessWidget {
+  const _ProjectsList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: getBoxDecoration(context),
+      child: LayoutBuilder(builder: (context, _) {
+        return Column(
+          children: [
+            const SizedBox(
+              height: 16,
+            ),
+            for (var item in getMyAllProjects(context)) ...[
+              kIsMobile
+                  ? ProjectItem(model: item)
+                  : ProjectWebItem(model: item),
+              const SizedBox(
+                height: 8,
+              ),
+              const Divider(
+                indent: 32,
+                endIndent: 32,
+                height: 4,
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+            ]
+          ],
+        );
+      }),
+    );
   }
 }

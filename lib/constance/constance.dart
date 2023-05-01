@@ -113,7 +113,46 @@ BoxDecoration getBoxDecoration(BuildContext context) => BoxDecoration(
       ),
     );
 
-List<ProjectModel> getMyProjects(BuildContext context) {
+List<ProjectModel> getMyMainProjects(BuildContext context) {
+  var localization = AppLocalizations.of(context);
+  return [
+    ProjectModel(
+        title: localization?.presenceProjectTitle ?? "",
+        explanation: localization?.presenceProjectBody ?? "",
+        imageUrl: "https://shahrejahan.com/images/attendance.gif",
+        techStack: [CustomIcon.flutter, CustomIcon.dart],
+        restricted: true),
+    ProjectModel(
+        title: localization?.portfolioSiteTitle ?? "",
+        explanation: localization?.portfolioSiteBody ?? "",
+        imageUrl: "https://shahrejahan.com/images/portfolio.png",
+        techStack: [CustomIcon.flutter, CustomIcon.dart],
+        restricted: false,
+        gitHubUrl: "https://github.com/hasanforaty/Profolio",
+        applicationUrl: "https://hasanforaty.github.io/"),
+    ProjectModel(
+        title: localization?.shahreJahanProjectTitle ?? "",
+        explanation: localization?.shahreJahanProjectBody ?? "",
+        imageUrl: "https://shahrejahan.com/images/shahrejahan.png",
+        techStack: [CustomIcon.flutter, CustomIcon.dart],
+        restricted: true,
+        applicationUrl: "https://shahrejahan.com/"),
+    ProjectModel(
+        title: localization?.momayeziTitle ?? "",
+        explanation: localization?.momayeziBody ?? "",
+        imageUrl: "https://shahrejahan.com/images/momayezi_3.gif",
+        techStack: [CustomIcon.android, CustomIcon.kotlin],
+        restricted: true),
+    ProjectModel(
+        title: localization?.massSmsTitle ?? "",
+        explanation: localization?.massSmsBody ?? "",
+        imageUrl: "",
+        techStack: [CustomIcon.android, CustomIcon.kotlin],
+        restricted: true),
+  ];
+}
+
+List<ProjectModel> getMyAllProjects(BuildContext context) {
   var localization = AppLocalizations.of(context);
   return [
     ProjectModel(

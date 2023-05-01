@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:profolio/constance/constance.dart';
 import 'package:profolio/widgets/my_image_container_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:profolio/widgets/social_media_widgets.dart';
 
 class SummeryWidget extends StatelessWidget {
-  const SummeryWidget({Key? key}) : super(key: key);
+  final String label;
+  final String explanation;
+  const SummeryWidget(
+      {Key? key, required this.label, required this.explanation})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var localization = AppLocalizations.of(context);
     return MyImageContainer(
         child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
@@ -18,7 +20,7 @@ class SummeryWidget extends StatelessWidget {
         textDirection: getTextDirection(context),
         children: [
           Text(
-            localization?.name ?? "",
+            label,
             textDirection: getTextDirection(context),
             style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.center,
@@ -27,7 +29,7 @@ class SummeryWidget extends StatelessWidget {
             height: 4,
           ),
           Text(
-            localization?.aboutMe ?? "",
+            explanation,
             textDirection: getTextDirection(context),
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.start,

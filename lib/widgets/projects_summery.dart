@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:profolio/constance/constance.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:profolio/routes.dart';
 import 'package:profolio/widgets/project_item_widget.dart';
 
 class ProjectSummery extends StatelessWidget {
@@ -37,6 +38,15 @@ class ProjectSummery extends StatelessWidget {
               height: 16,
             ),
             const _ProjectList(),
+            ElevatedButton(
+              onPressed: () {
+                RouteGenerator.goTo(routes: Routes.projects, context: context);
+              },
+              child: Text(
+                localization?.seeMoreProject ?? "",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+            )
           ],
         ),
       ),
@@ -57,7 +67,7 @@ class _ProjectList extends StatelessWidget {
           scrollDirection: kIsMobile ? Axis.vertical : Axis.horizontal,
           shrinkWrap: true,
           children: [
-            for (var item in getMyProjects(context)) ...[
+            for (var item in getMyMainProjects(context)) ...[
               ProjectItem(model: item),
               const SizedBox(
                 width: 8,
