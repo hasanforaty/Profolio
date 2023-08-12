@@ -117,6 +117,14 @@ List<ProjectModel> getMyMainProjects(BuildContext context) {
   var localization = AppLocalizations.of(context);
   return [
     ProjectModel(
+      title: localization?.shadowingTitle ?? "",
+      explanation: localization?.shadowingProjectBody ?? "",
+      imageUrl: "https://shahrejahan.com/images/shadow_1.png",
+      techStack: [CustomIcon.flutter, CustomIcon.dart],
+      restricted: true,
+      type: ProjectType.enterprise,
+    ),
+    ProjectModel(
       title: localization?.presenceProjectTitle ?? "",
       explanation: localization?.presenceProjectBody ?? "",
       imageUrl: "https://shahrejahan.com/images/attendance.gif",
@@ -165,6 +173,14 @@ List<ProjectModel> getMyMainProjects(BuildContext context) {
 List<ProjectModel> getMyAllProjects(BuildContext context) {
   var localization = AppLocalizations.of(context);
   return [
+    ProjectModel(
+      title: localization?.shadowingTitle ?? "",
+      explanation: localization?.shadowingProjectBody ?? "",
+      imageUrl: "https://shahrejahan.com/images/shadow_1.png",
+      techStack: [CustomIcon.flutter, CustomIcon.dart],
+      restricted: true,
+      type: ProjectType.enterprise,
+    ),
     ProjectModel(
       title: localization?.presenceProjectTitle ?? "",
       explanation: localization?.presenceProjectBody ?? "",

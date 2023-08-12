@@ -27,6 +27,7 @@
   "enterpriseProject": "تجاری",
   "demoProjects": "دمو",
   "practicalProjects": "تمرینی",
-  "allProjects": "همه"
-
+  "allProjects": "همه",
+  "shadowingTitle": "پروژه یادگیری به وسیله تکنیک سایه",
+  "shadowingProjectBody": "یک پروژه فلاتر با هدف کمک در یادگیری زبان های جدید به وسیله تکنیک سایه."
 }

@@ -6,6 +6,8 @@
   "projectSummeryTitle": "projects",
   "seeMoreProject": "See More Project",
   "presenceProjectTitle": "Project : Presence & Absence",
+  "shadowingTitle": "Project : shadowing helper",
+  "shadowingProjectBody": "a Flutter Project for using shadowing technique to help learning new language",
   "presenceProjectBody": "a Flutter Project for supervisors in university to presence and absence",
   "shahreJahanProjectTitle": "Project : Hotel Shahre jahan",
   "shahreJahanProjectBody": "a Flutter web application for hotel Shahrejahan",
